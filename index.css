@@ -1,0 +1,32 @@
+html, body, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+html, button {
+  font-family: sans-serif;
+}
+
+div {
+  padding: 2px;
+}
+
+div h3 {
+  margin: 2px 4px;
+}
+
+div small {
+  float: right;
+  opacity: 0.75;
+  font-size: .75em;
+}
+
+iframe {
+  width: 200px;
+  height: 72px; 
+}
+
+div[id] {
+  float: left;
+  border: 1px solid silver;
+}
