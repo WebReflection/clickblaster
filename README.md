@@ -2,7 +2,7 @@
 
 An agnostic framework benchmark about repeated, sparse, updates per single element.
 
-Testing hyperHTML and hooks like potentials, to see how relevant these are.
+Testing hyperHTML and hooks like potentials, to see how these could affect performance.
 
 ### Example
 
@@ -26,14 +26,26 @@ const Counter = stardust(() => {
     </button>
   </div>`;
 });
+
+// export the global setup
+function setup() {
+  document.body.appendChild(Counter());
+}
 ```
 
 ## How To Benchmark
 
 Add a folder with the framework/libary/utility package name, and put an `index.html` and at least a `benchmark.js` in it, as it is for the [vanilla](./vanilla/) folder one.
 
-As long as you export **a global setup** function that crates a **global button** that once clicked, increments the **global counter**, which **starts from 0**, you are good to go.
+As long as you export **a global setup** function that crates **a unique button** that once clicked, increments the **global counter**, which **starts from 0**, you are good to go.
 
 Once you have a usable test, add a `<div id="package-name"></div>` to the main [index.html](./index.html) file.
 
 Use [the live page](https://webreflection.github.io/clickblaster/) and eventually add `?100` or `?9000` to change stress level and see how all frameworks responds.
+
+### How to read results
+
+The result is about **loading** time, followed by **setup** time, and **benchmark** time, all in **milliseconds**.
+
+AS any micro benchmark, take this with a pinch of salt, but your PRs are welcome anyway.
+
