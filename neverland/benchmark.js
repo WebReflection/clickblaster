@@ -4,7 +4,7 @@ const {
   useEffect, useRef, useState
 } = neverland;
 
-const Counter = stardust(function () {
+const Counter = stardust(() => {
   const [count, setCount] = useState(0);
   const [icount, setICount] = useState(0);
   const {current: increment} = useRef(1 + Math.floor(Math.random() * 5));
@@ -13,7 +13,7 @@ const Counter = stardust(function () {
   <div>
     Count ${count}<br>
     Increment ${increment}<br>
-    <button onclick=${function () {
+    <button onclick=${() => {
       setCount(count + 1);
       setICount(icount + 1);
     }} clicks=${count}>

@@ -15,7 +15,7 @@ document.addEventListener(
     const benchmarks = {};
     setTimeout(function bench() {
       if (packages.length) {
-        window.loaded = function () {
+        window.loaded = () => {
           timers.load = Math.round(now() - time);
           const frame = div.lastChild.contentWindow;
           const benchmark = () => {
