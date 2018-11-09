@@ -45,7 +45,9 @@ document.addEventListener(
         const div = document.getElementById(package);
         const timers = (benchmarks[package] = {});
         let time = now();
-        div.innerHTML = '<h3>' + package + '</h3><iframe frameborder="0" src="' + package + '/index.html" onload="loaded()"></iframe>';
+        div.innerHTML =
+          '<h3>' + package.split('/')[0] + '</h3>' +
+          '<iframe frameborder="0" src="' + package + '/index.html" onload="loaded()"></iframe>';
       } else {
         console.log(benchmarks);
       }

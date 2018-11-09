@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "$": "npm-dollar",
+    "bench": "http-server",
+    "build": "npm run $ build && npm run bench",
+    "install": "npm run $ install && npm run bench"
+  },
+  "npm-dollar": {
+    "build": {
+      "react-component": [
+        "cd react-component",
+        "npm run build",
+        "npm run make-relative",
+        "cd -"
+      ]
+    },
+    "install": {
+      "react-component": [
+        "cd react-component",
+        "npm i",
+        "npm run build",
+        "npm run make-relative",
+        "cd -"
+      ]
+    }
+  },
+  "dependencies": {
+    "npm-dollar": "^2.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
