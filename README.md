@@ -1,4 +1,4 @@
-# ⚡️ clickblaster 🔥
+# ⚡️ [clickblaster](https://webreflection.github.io/clickblaster/) 🔥
 
 An agnostic framework benchmark about repeated, sparse, updates per single element.
 
