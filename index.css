@@ -3,6 +3,10 @@ html, body, h3 {
   padding: 0;
 }
 
+h1 {
+  font-size: 1.3em;
+}
+
 body {
   padding-left: 4px;
   padding-top: 4px;
