@@ -61,7 +61,7 @@ document.addEventListener(
       } else {
         console.log(benchmarks);
       }
-    }, 250);
+    }, 750);
   },
   {once: true}
 );
