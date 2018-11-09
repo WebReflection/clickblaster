@@ -15,7 +15,7 @@ const Counter = stardust(() => {
     Increment ${increment}<br>
     <button onclick=${() => {
       setCount(count + 1);
-      setICount(icount + 1);
+      setICount(icount + increment);
     }} clicks=${count}>
       Current ${icount}
     </button>
