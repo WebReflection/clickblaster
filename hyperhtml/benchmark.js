@@ -20,5 +20,4 @@ function setup() {
     </div>`;
   }
   update();
-  window.count = 0;
 }

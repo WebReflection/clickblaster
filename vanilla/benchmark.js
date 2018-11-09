@@ -33,5 +33,4 @@ function setup() {
     window.count = count;
   });
 
-  window.count = count;
 }

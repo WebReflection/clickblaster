@@ -17,9 +17,19 @@ document.addEventListener(
       if (packages.length) {
         window.loaded = () => {
           timers.load = Math.round(now() - time);
+          let clicked = false;
           const frame = div.lastChild.contentWindow;
+          frame.count = 0;
           const benchmark = () => {
-            if (frame.count < stress) {
+            const {count} = frame;
+            if (clicked && count < 1) {
+              console.error(package, timers);
+              div.firstChild.appendChild(document.createElement('small')).textContent = '[error]';
+              bench();
+              return;
+            }
+            if (count < stress) {
+              clicked = true;
               button.click();
               benchmark();
             }
@@ -31,7 +41,7 @@ document.addEventListener(
                 timers.setup,
                 timers.benchmark
               ].join(', ') + ']';
-              bench();
+              setTimeout(bench, 250);
             }
           };
           time = now();
@@ -51,7 +61,7 @@ document.addEventListener(
       } else {
         console.log(benchmarks);
       }
-    });
+    }, 250);
   },
   {once: true}
 );
