@@ -65,6 +65,6 @@ Follow up local IPs to test locally, or use [the live page](https://webreflectio
 
 The result is about **loading** time, followed by **setup** time, and **benchmark** time, all in **milliseconds**.
 
-AS any micro benchmark, take this with a pinch of salt.
+AS any micro benchmark, so take this with a grain of salt.
 
 PRs for other frameworks, or patterns, are more than welcome. Thanks ❤️
