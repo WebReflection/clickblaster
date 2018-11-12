@@ -12,6 +12,12 @@
         "npm run build",
         "npm run make-relative",
         "cd -"
+      ],
+      "react-hooks": [
+        "cd react-hooks",
+        "npm run build",
+        "npm run make-relative",
+        "cd -"
       ]
     },
     "install": {
