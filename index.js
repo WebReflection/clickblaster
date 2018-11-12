@@ -70,7 +70,7 @@ document.addEventListener(
         new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: keys.map(key => key.split('/')[0]),
+            labels: keys.map(key => key.split('/')[0].split('-').join(' ')),
             datasets: [{
               label: sub[0],
               backgroundColor: '#eee3e7',
