@@ -16,7 +16,7 @@ document.addEventListener(
     setTimeout(function bench() {
       if (packages.length) {
         window.loaded = () => {
-          timers.load = Math.round(now() - time);
+          timers.load = now() - time;
           let clicked = false;
           const frame = div.lastChild.contentWindow;
           frame.count = 0;
@@ -38,12 +38,12 @@ document.addEventListener(
                 benchmark();
             }
             else {
-              timers.benchmark = Math.round(now() - time);
+              timers.benchmark = now() - time;
               console.log(package, timers);
               div.firstChild.appendChild(document.createElement('small')).textContent = '[' + [
-                timers.load,
-                timers.setup,
-                timers.benchmark
+                Math.round(timers.load),
+                Math.round(timers.setup),
+                  Math.round(timers.benchmark)
               ].join(', ') + ']';
               setTimeout(bench, 250);
             }
@@ -51,7 +51,7 @@ document.addEventListener(
           time = now();
           frame.setup();
           const button = frame.document.querySelector('button');
-          timers.setup = Math.round(now() - time);
+          timers.setup = now() - time;
           time = now();
           benchmark();
         };
