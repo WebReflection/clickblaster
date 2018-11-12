@@ -68,7 +68,7 @@ document.addEventListener(
         const sub = Object.keys(benchmarks[keys[0]]);
         const ctx = document.querySelector('canvas').getContext('2d');
         new Chart(ctx, {
-          type: 'bar',
+          type: 'horizontalBar',
           data: {
             labels: keys.map(key => key.split('/')[0].split('-').join(' ')),
             datasets: [{
