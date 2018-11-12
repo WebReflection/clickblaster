@@ -61,6 +61,17 @@ Running `npm run build` should automatically setup all the tests that need it, w
 
 Follow up local IPs to test locally, or use [the live page](https://webreflection.github.io/clickblaster/), eventually adding `?100` or `?9000` to change stress level and verify how all frameworks respond.
 
+#### Asynchronous Updates
+
+If your framework of choice doesn't update right away the DOM and needs special handling, it should trigger `top.benchmark()` once its view has been updated.
+
+Please see [VueJS](./vue/src/components/Counter.vue) to understand how this works.
+
+
+### How to build
+
+You can either `npm i` and then `npm run build` or use `npm run $ build.vue`, as example, to target a specific build.
+
 ### How to read results
 
 The result is about **loading** time, followed by **setup** time, and **benchmark** time, all in **milliseconds**.

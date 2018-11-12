@@ -18,6 +18,12 @@
         "npm run build",
         "npm run make-relative",
         "cd -"
+      ],
+      "vue": [
+        "cd vue",
+        "npm run build",
+        "npm run make-relative",
+        "cd -"
       ]
     },
     "install": {

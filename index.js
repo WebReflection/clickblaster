@@ -30,8 +30,12 @@ document.addEventListener(
             }
             if (count < stress) {
               clicked = true;
+              const {textContent} = button;
               button.click();
-              benchmark();
+              if (button.textContent === textContent)
+                window.benchmark = benchmark;
+              else
+                benchmark();
             }
             else {
               timers.benchmark = Math.round(now() - time);
