@@ -74,11 +74,11 @@ document.addEventListener(
             datasets: [{
               label: sub[0],
               backgroundColor: '#eee3e7',
-              data: keys.map(key => benchmarks[key][sub[0]])
+              data: keys.map(key => benchmarks[key][sub[0]] / 5)
             }, {
               label: sub[1],
               backgroundColor: '#eec9d2',
-              data: keys.map(key => benchmarks[key][sub[1]])
+              data: keys.map(key => benchmarks[key][sub[1]] * 10)
             }, {
               label: sub[2],
               backgroundColor: '#f6abb6',
