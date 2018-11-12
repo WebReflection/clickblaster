@@ -60,6 +60,29 @@ document.addEventListener(
           '<iframe frameborder="0" src="' + package + '/index.html" onload="loaded()"></iframe>';
       } else {
         console.log(benchmarks);
+        const keys = Object.keys(benchmarks);
+        const sub = Object.keys(benchmarks[keys[0]]);
+        const ctx = document.querySelector('canvas').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: keys,
+            datasets: [{
+              label: sub[0],
+              backgroundColor: '#eee3e7',
+              data: keys.map(key => benchmarks[key][sub[0]])
+            }, {
+              label: sub[1],
+              backgroundColor: '#eec9d2',
+              data: keys.map(key => benchmarks[key][sub[1]])
+            }, {
+              label: sub[2],
+              backgroundColor: '#f6abb6',
+              data: keys.map(key => benchmarks[key][sub[2]])
+            }]
+          },
+          options: {}
+        });
       }
     }, 750);
   },

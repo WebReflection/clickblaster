@@ -6,15 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>⚡️ clickblaster 🔥</title>
   <link rel="styleSheet" href="index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   <script defer src="index.js"></script>
 </head>
 <body>
   <h1>⚡️ <a href="https://github.com/WebReflection/clickblaster">clickblaster</a> 🔥</h1>
-  <p><code><strong>[loading, setup, benchmark]</strong></code> in milliseconds. Use <code>?5000</code> <small>(between 1 and 9000)</small> as query string to measure different magnitudes.</p>
+  <p><code><strong>[loading, setup, benchmark]</strong></code> in milliseconds <small>(lower is better)</small>.</p>
+  <p>Use <code>?5000</code> <small>(between 1 and 9000)</small> as query string to measure different magnitudes.</p>
   <div id="vanilla"></div>
   <div id="hyperhtml"></div>
   <div id="neverland"></div>
   <div id="react-component/build"></div>
   <div id="react-hooks/build"></div>
+  <canvas></canvas>
 </body>
 </html>
