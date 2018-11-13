@@ -25,6 +25,7 @@ function setup() {
     setCount(count);
     setICount(icount);
     window.count = count;
+    button.attr('clicks', count);
   });
 
   function setCount(count) {

@@ -40,20 +40,29 @@ document.addEventListener(
             else {
               timers.benchmark = now() - time;
               console.log(package, timers);
-              div.firstChild.appendChild(document.createElement('small')).textContent = '[' + [
-                Math.round(timers.load),
-                Math.round(timers.setup),
-                  Math.round(timers.benchmark)
-              ].join(', ') + ']';
+              if (1000 <= timers.benchmark) {
+                div.firstChild.appendChild(document.createElement('small')).textContent = '[overdue]';
+              } else {
+                div.firstChild.appendChild(document.createElement('small')).textContent = '[' + [
+                  Math.round(timers.load),
+                  Math.round(timers.setup),
+                    Math.round(timers.benchmark)
+                ].join(', ') + ']';
+              }
               setTimeout(bench, 250);
             }
           };
           time = now();
-          frame.setup();
-          const button = frame.document.querySelector('button');
-          timers.setup = now() - time;
-          time = now();
-          benchmark();
+          const setup = frame.setup() || {then(fn) {
+            fn(frame.document.querySelector('button'));
+          }};
+          let button;
+          setup.then($ => {
+            button = $;
+            timers.setup = now() - time;
+            time = now();
+            benchmark();
+          });
         };
         const package = packages.shift();
         const div = document.getElementById(package);
@@ -64,7 +73,7 @@ document.addEventListener(
           '<iframe frameborder="0" src="' + package + '/index.html" onload="loaded()"></iframe>';
       } else {
         console.log(benchmarks);
-        const keys = Object.keys(benchmarks);
+        const keys = Object.keys(benchmarks).filter(key => benchmarks[key].benchmark < 1000);
         const sub = Object.keys(benchmarks[keys[0]]);
         const ctx = document.querySelector('canvas').getContext('2d');
         new Chart(ctx, {

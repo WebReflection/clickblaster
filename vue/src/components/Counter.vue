@@ -2,7 +2,7 @@
   <div>
     Count {{ count }}<br>
     Increment {{ increment }}<br>
-    <button v-on:click="update()">
+    <button v-on:click="update()" :clicks="count">
       Current {{ icount }}
     </button>
   </div>

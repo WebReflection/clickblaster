@@ -47,9 +47,11 @@ These are the things expected to happen:
       </button>
     </div>
     ```
+    If such setup needs to be asynchronous, the `window.setup` can return a `Promise` that will resolve, once the body is available, passing the `button` element.
   * the `count` value is a number that starts from `0` and should increment `+ 1` per each `<button>` click. Every update needs to be reflected 1:1 as global `window.count` variable. Initially, such global value is already `0`, but such value should be available at the component level too.
   * `increment` value is the result, performed only once, of the following `1 + Math.floor(Math.random() * 5)` expression. Each update should keep the initial value and this variable should never leak to the global scope.
   * `icount` is the resulting value of the expression `increment + count`. It is updated per each button click so that visually, the result, should always be `count`, `increment`, `count * increment`, yet stored as separate, non global, property/state/field.
+  * the <strong>button</button> must have a `clicks` attribute with the same `count` value, updated per each click.
 
 You can see a basic example within the [vanilla](./vanilla/) folder, or a more complex one within the [react-component](./react-component/) one.
 

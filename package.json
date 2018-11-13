@@ -7,6 +7,14 @@
   },
   "npm-dollar": {
     "build": {
+      "polymer": [
+        "cd polymer",
+        "npm run build",
+        "npm run make-modules",
+        "npm run make-index",
+        "npm run make-counter",
+        "cd -"
+      ],
       "react-component": [
         "cd react-component",
         "npm run build",

@@ -1,0 +1,20 @@
+{
+  "name": "polymer-counter",
+  "description": "it counts",
+  "main": "polymer-counter.js",
+  "scripts": {
+    "build": "polymer build",
+    "make-modules": "mv build/default/node_modules build/default/modules",
+    "make-index": "sed -i.bck 's/node_modules/modules/g' build/default/index.html && rm build/default/index.html.bck",
+    "make-counter": "sed -i.bck 's/node_modules/modules/g' build/default/polymer-counter.js && rm build/default/polymer-counter.js.bck"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0"
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "polymer-cli": "^1.9.0",
+    "wct-browser-legacy": "^1.0.0"
+  }
+}

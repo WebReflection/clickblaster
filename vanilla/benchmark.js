@@ -30,6 +30,7 @@ function setup() {
     icount += increment;
     countNode.textContent = count;
     icountNode.textContent = icount;
+    button.setAttribute('clicks', count);
     window.count = count;
   });
 
